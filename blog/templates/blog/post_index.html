@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container align-items-center">
+	<div class="row">
+		{% for post in object_list %}
+		<div class="col-sm-3 mb-4">
+			<img class="w-100" src="{{ post.get_post_thumbnail }}">
+			<h4>
+				<strong>
+					<a class="title-label" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+				</strong>
+			</h4>
+			<p class="text-label">{{ post.post_snippet }}</p>
+			<small class="text-muted">{{ post.date_written.date }}</small>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

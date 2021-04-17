@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="custom-div text-content">
+		<h1><strong>{{ post.title }}</strong></h1>
+		<small class="text-muted">{{ post.author.first_name }} {{ post.author.last_name }} | {{ post.date_written.date }}</small>
+		<p>{{ post.content | safe }}</p>
+
+		<hr class="hr-line">
+		<br>
+		<h3><strong>Comments</strong></h3>
+		<a href="{% url 'add_comment' post.pk %}">
+			<button class="btn btn-primary">Add comment</button>
+		</a>
+		
+		<div class="mt-4 mb-4">
+		{% if not post.comments.all %}
+			<p>No comment yet</p>
+		{% else %}
+			{% for comment in post.comments.all %}
+				<p><strong>{{ comment.commenter_name }}</strong><small class="text-muted"> | {{ comment.date_commented }}</small></p>
+				<p>{{ comment.commenter_comment }}</p>
+			{% endfor %}
+		{% endif %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 mb-4">
+			<img class="w-100" src="{{ latest_post.0.get_post_thumbnail }}">
+			<h2>
+				<strong>
+					<a class="title-label" href="{{ latest_post.0.get_absolute_url }}">{{ latest_post.0.title }}</a>
+				</strong>
+			</h2>
+			<p class="text-label">{{ latest_post.0.post_snippet }}</p>
+			<small class="text-muted">{{ latest_post.0.date_written.date }}</small>
+		</div>
+		<div class="col-sm-4">
+			<div class="mb-4">
+				<img class="w-100" src="{{ latest_post.1.get_post_thumbnail }}">
+				<h4>
+				<strong>
+					<a class="title-label" href="{{ latest_post.1.get_absolute_url }}">{{ latest_post.1.title }}</a>
+				</strong>
+				</h4>
+				<p class="text-label">{{ latest_post.1.post_snippet }}</p>
+				<small class="text-muted">{{ latest_post.1.date_written.date }}</small>
+			</div>
+			<div class="mb-4">
+				<img class="w-100" src="{{ latest_post.2.get_post_thumbnail }}">
+				<h4>
+				<strong>
+					<a class="title-label" href="{{ latest_post.2.get_absolute_url }}">{{ latest_post.2.title }}</a>
+				</strong>
+				</h4>
+				<p class="text-label">{{ latest_post.2.post_snippet }}</p>
+				<small class="text-muted">{{ latest_post.2.date_written.date }}</small>
+			</div>
+		</div>
+	</div>
+
+	<hr class="hr-line">
+
+	<h3><strong>Latest Stories</strong></h3>
+
+	<div class="row">
+		<div class="col-sm-4 mb-4">
+			<img class="w-100" src="{{ latest_post.3.get_post_thumbnail }}">
+			<h4>
+				<strong>
+					<a class="title-label" href="{{ latest_post.3.get_absolute_url }}">{{ latest_post.3.title }}</a>
+				</strong>
+			</h4>
+			<p class="text-label">{{ latest_post.3.post_snippet }}</p>
+			<small class="text-muted">{{ latest_post.3.date_written.date }}</small>
+		</div>
+		<div class="col-sm-4 mb-4">
+			<img class="w-100" src="{{ latest_post.4.get_post_thumbnail }}">
+			<h4>
+				<strong>
+					<a class="title-label" href="{{ latest_post.4.get_absolute_url }}">{{ latest_post.4.title }}</a>
+				</strong>
+			</h4>
+			<p class="text-label">{{ latest_post.4.post_snippet }}</p>
+			<small class="text-muted">{{ latest_post.4.date_written.date }}</small>
+		</div>
+		<div class="col-sm-4 mb-4">
+			<img class="w-100" src="{{ latest_post.5.get_post_thumbnail }}">
+			<h4>
+				<strong>
+					<a class="title-label" href="{{ latest_post.5.get_absolute_url }}">{{ latest_post.5.title }}</a>
+				</strong>
+			</h4>
+			<p class="text-label">{{ latest_post.5.post_snippet }}</p>
+			<small class="text-muted">{{ latest_post.5.date_written.date }}</small>
+		</div>
+	</div>
+
+	<hr class="hr-line">
+
+	<div class="custom-div text-center">
+		<h3><strong>Subscribe to us</strong></h3>
+		<p>Join other human beings that know them data</p>
+		<form method="POST">
+			<div class="row">
+				<div class="col-sm-8">
+					{% csrf_token %}
+					{{ form.as_p }}
+				</div>
+				<div class="col-sm-4">
+					<button class="btn btn-primary form-control">Subscribe</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}
