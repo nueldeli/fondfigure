@@ -17,11 +17,12 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Helvetica', sans-serif;
 }
 
 li {
@@ -37,8 +38,14 @@ nav a {
 	color: #fff;
 }
 
+nav a:hover {
+	color: #fff;
+	opacity: 0.9;
+}
+
 a:hover {
-	color: #ff6600;
+	color: #000;
+	opacity: 0.5;
 }
 
 .navbar-custom {
@@ -51,6 +58,16 @@ a:hover {
 
 .navbar-logo-img {
 	width: 200px;
+}
+
+.btn-custom {
+	background-color: #000;
+	color: #fff;
+}
+
+.btn-custom:hover {
+	background-color: #d3d3d3;
+	color: #000;
 }
 
 /*.hero-image {
@@ -110,8 +127,7 @@ a:hover {
 }
 
 .footer {
-	background-color: #000;
-	color: #fff;
+	color: #000;
 	font-size: 12px;
 }
 
@@ -125,10 +141,11 @@ a:hover {
 
 .fa:hover {
   	text-decoration: none;
+  	color: #a9a9a9;
 }
 
 .fa-facebook, .fa-instagram, .fa-twitter {
-	color: #fff;
+	color: #000;
 }
 
 .contact-icon {
