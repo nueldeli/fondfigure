@@ -16,12 +16,12 @@
 		<div class="row text-center">
 			<div class="col">
 				<a href="{% url 'post_update' post.pk %}">
-					<button class="btn btn-custom">Edit</button>
+					<button class="container btn btn-custom">Edit</button>
 				</a>
 			</div>
 			<div class="col">
 				<a href="{% url 'post_delete' post.pk %}">
-					<button class="btn btn-danger">Delete</button>
+					<button class="container btn btn-danger">Delete</button>
 				</a>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 		
 		<h3>Comments</h3>
 		<a href="{% url 'add_comment' post.pk %}">
-			<button class="btn btn-primary">Add comment</button>
+			<button class="btn btn-custom">Add comment</button>
 		</a>
 		
 		<div class="mt-4 mb-4">

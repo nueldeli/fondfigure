@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<br>
 {% if user.is_authenticated %}
 	{% if user.is_staff and user.id == post.author.id %}
 		<div class="custom-div mt-4 mb-4">
@@ -9,11 +10,12 @@
 				<form method="POST">
 					{% csrf_token %}
 					<p>Are you sure?</p>
-					<button class="btn btn-danger">Delete</button>
+					<button class="container btn btn-danger">Delete</button>
 				</form>
 				<br>
-				<a class="btn btn-custom" href="{{ post.get_absolute_url }}">Cancel</a>
+				<a href="{{ post.get_absolute_url }}"><button class="container btn btn-custom">Cancel</button></a>
 			</div>
+			<br>
 		</div>
 	{% else %}
 
