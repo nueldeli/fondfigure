@@ -14,7 +14,7 @@ class Post(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 	title = models.CharField('Post title', max_length=250)
 	slug = models.SlugField(max_length=250, unique=True, null=True, blank=True)
-	thumbnail_img = models.ImageField('Thumbnail square img 600 x 600 px', null=True, blank=True, upload_to='thumbnail/')
+	thumbnail_img = models.ImageField('Thumbnail image 600x600 px', null=True, blank=True, upload_to='thumbnail/')
 	post_snippet = models.TextField('Post snippet', max_length=250, null=True)
 	content = RichTextUploadingField(blank=True)
 

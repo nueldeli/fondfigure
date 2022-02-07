@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	{% if user.is_staff and user.id == post.author.id %}
+		<div class="custom-div mt-4 mb-4">
+			<h5>Deleting "<i>{{ post.title }}</i>"</h5>
+			<div class="form-group">
+				<form method="POST">
+					{% csrf_token %}
+					<p>Are you sure?</p>
+					<button class="btn btn-danger">Delete</button>
+				</form>
+				<br>
+				<a class="btn btn-custom" href="{{ post.get_absolute_url }}">Cancel</a>
+			</div>
+		</div>
+	{% else %}
+
+		<div class="custom-div mt-4 text-center">
+			<h6>You're not the original author. Only the author is allowed to delete their own posts.</h6>
+		</div>
+
+	{% endif %}
+{% else %}
+
+	<div class="custom-div mt-4 text-center">
+		<h6>Sorry, you have no access here</h6>
+	</div>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	{% if user.is_staff and user.id == post.author.id %}
+		<div class="mt-4 mb-4">
+			<h3>Updating "<i>{{ post.title }}</i>"</h3>
+			<div class="form-group">
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form.media }}
+					{{ form.as_p }}
+					<button class="btn btn-custom">Update</button>
+				</form>
+			</div>
+		</div>
+
+		<script>
+			var name = '{{ user.id }}'
+			document.getElementById('writer').value = name;
+		</script>
+	{% else %}
+
+	<div class="custom-div mt-4 text-center">
+		<h6>You're not the original author. Only the author is allowed to edit their own posts.</h6>
+	</div>
+
+	{% endif %}
+
+{% else %}
+
+	<div class="custom-div mt-4 text-center">
+		<h6>Sorry, you have no access here</h6>
+	</div>
+
+{% endif %}
+{% endblock %}

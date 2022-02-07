@@ -41,6 +41,13 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'send_message' %}">Contact</a>
 					</li>
+					{% if user.is_authenticated %}
+						{% if user.is_staff %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'post_add' %}">POST</a>
+						</li>
+						{% endif %}
+					{% endif %}
 					<li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				          User

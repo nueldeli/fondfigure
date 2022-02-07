@@ -12,6 +12,21 @@
 		<p>{{ post.content | safe }}</p>
 
 		<br>
+		<br>
+		<div class="row text-center">
+			<div class="col">
+				<a href="{% url 'post_update' post.pk %}">
+					<button class="btn btn-custom">Edit</button>
+				</a>
+			</div>
+			<div class="col">
+				<a href="{% url 'post_delete' post.pk %}">
+					<button class="btn btn-danger">Delete</button>
+				</a>
+			</div>
+		</div>
+
+		<br>
 		<hr>
 		<br>
 		
