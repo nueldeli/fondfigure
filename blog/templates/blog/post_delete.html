@@ -4,7 +4,7 @@
 <br>
 {% if user.is_authenticated %}
 	{% if user.is_staff and user.id == post.author.id %}
-		<div class="custom-div mt-4 mb-4">
+		<div class="custom-div  mt-4 mb-4">
 			<h5>Deleting "<i>{{ post.title }}</i>"</h5>
 			<div class="form-group">
 				<form method="POST">

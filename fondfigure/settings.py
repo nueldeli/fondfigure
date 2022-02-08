@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     # Blog app
     'blog.apps.BlogConfig',
     #---
+    # Membership app
+    'membership.apps.MembershipConfig',
+    # ---
     # Ckeditor
     'ckeditor',
     'ckeditor_uploader',
@@ -139,3 +142,7 @@ STATIC_URL = '/static/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'fondfigure/media')
 MEDIA_URL = '/media/'
+
+# Login and logout stuff
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
