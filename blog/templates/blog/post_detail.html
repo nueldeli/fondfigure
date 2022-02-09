@@ -13,19 +13,22 @@
 
 		<br>
 		<br>
-		<div class="row text-center">
-			<div class="col">
-				<a href="{% url 'post_update' post.pk %}">
-					<button class="container btn btn-custom">Edit</button>
-				</a>
+		{% if user.is_authenticated %}
+			{% if user.is_staff %}
+			<div class="row text-center">
+				<div class="col">
+					<a href="{% url 'post_update' post.pk %}">
+						<button class="container btn btn-custom">Edit</button>
+					</a>
+				</div>
+				<div class="col">
+					<a href="{% url 'post_delete' post.pk %}">
+						<button class="container btn btn-danger">Delete</button>
+					</a>
+				</div>
 			</div>
-			<div class="col">
-				<a href="{% url 'post_delete' post.pk %}">
-					<button class="container btn btn-danger">Delete</button>
-				</a>
-			</div>
-		</div>
-
+			{% endif %}
+		{% endif %}
 		<br>
 		<hr>
 		<br>
